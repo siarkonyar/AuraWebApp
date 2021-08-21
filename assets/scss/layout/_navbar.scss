@@ -1,0 +1,100 @@
+@media (min-width: 1200px) {
+    .nav {
+        justify-content: space-between;
+    }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 768px) {
+    .nav {
+        flex-direction: row;
+        align-items: stretch;
+        .navbar-nav {
+            flex-direction: row !important;
+            .nav-item {
+                .nav-link {
+                    color: #0f779f;
+                    display: flex;
+                    align-items: center;
+                    padding: 40px 25px;
+                    &:hover {
+                        background-color: #0f779f;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    .navbar-nav {
+        display: flex;
+        margin: 0 !important;
+        padding: 0 !important;
+        .nav-item {
+            display: flex;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative;
+        }
+    }
+    .select-box {
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        position: relative;
+        .selected {
+            height: 100%;
+            align-items: center;
+            cursor: default;
+            user-select: none;
+            display: flex;
+            color: #0f779f;
+            padding: 40px 25px;
+            .selected-language {
+                padding-left: 7px;
+            }
+        }
+        .options-container {
+            position: absolute;
+            transform: translate(0, 80%);
+            transition: all 0.4s;
+            max-height: 0;
+            opacity: 0;
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            overflow: hidden;
+            .option {
+                color: #0f779f;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                padding-left: 20px;
+                padding-right: 20px;
+                width: 92.5px;
+                label {
+                    cursor: pointer;
+                }
+                .radio {
+                    display: none;
+                }
+                &:hover {
+                    background-color: #0f779f;
+                    color: white;
+                }
+            }
+            &.active {
+                max-height: fit-content;
+                opacity: 1;
+                & ~ .selected {
+                    background-color: #0f779f;
+                    color: white;
+                }
+            }
+        }
+    }
+}

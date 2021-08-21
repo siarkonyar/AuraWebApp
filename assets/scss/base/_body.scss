@@ -1,0 +1,10 @@
+body{
+    font-family: "Sofia Pro" !important;
+}
+
+button,
+select{
+    &:focus{
+        box-shadow: none !important;
+    }
+}
